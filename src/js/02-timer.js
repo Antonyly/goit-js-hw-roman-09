@@ -70,10 +70,10 @@ class Timer {
         this.isActive = true;
         this.timerID = setInterval(() => {
         const thisTime = Date.now();
-        const deltaTime = selectedTime - thisTime;
-        const componentsTimer = convertMs(deltaTime);
+        const averageTime = selectedTime - thisTime;
+        const componentsTimer = convertMs(averageTime);
         this.updateComponentsTimer(componentsTimer);
-        if (deltaTime <= 0) {
+        if (averageTime <= 0) {
             this.stopTimer();
         }
         }, 1000);
